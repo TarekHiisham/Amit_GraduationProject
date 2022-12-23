@@ -1,0 +1,673 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+                              ASET_MODE_program.o (__udivmodqi4)
+c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+                              HTEMP_SENSOR_program.o (__udivmodhi4)
+c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+                              MTIMER_program.o (__udivmodsi4)
+c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                              c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o (exit)
+c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                              ACTR_MODE_program.o (__do_copy_data)
+c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+                              ASET_MODE_program.o (__do_clear_bss)
+c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+                              MTIMER_program.o (__umulhisi3)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000002         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+user_signatures  0x00850000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+LOAD main.o
+LOAD ASET_MODE_program.o
+LOAD ARUN_MODE_program.o
+LOAD ACTR_MODE_program.o
+LOAD MDIO_program.o
+LOAD MEXTI_program.o
+LOAD MADC_program.o
+LOAD MTIMER_program.o
+LOAD MTWI_program.o
+LOAD HLED_program.o
+LOAD HPBUTT_program.o
+LOAD HSEV_SEG_program.o
+LOAD HEEP_program.o
+LOAD HTEMP_SENSOR_program.o
+LOAD HRELAY_program.o
+START GROUP
+LOAD c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a
+LOAD c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libm.a
+LOAD c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a
+LOAD c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libatmega32.a
+END GROUP
+                0x00020000                __TEXT_REGION_LENGTH__ = DEFINED (__TEXT_REGION_LENGTH__)?__TEXT_REGION_LENGTH__:0x20000
+                0x0000ffa0                __DATA_REGION_LENGTH__ = DEFINED (__DATA_REGION_LENGTH__)?__DATA_REGION_LENGTH__:0xffa0
+                0x00010000                __EEPROM_REGION_LENGTH__ = DEFINED (__EEPROM_REGION_LENGTH__)?__EEPROM_REGION_LENGTH__:0x10000
+                [0x00000002]                __FUSE_REGION_LENGTH__ = DEFINED (__FUSE_REGION_LENGTH__)?__FUSE_REGION_LENGTH__:0x400
+                0x00000400                __LOCK_REGION_LENGTH__ = DEFINED (__LOCK_REGION_LENGTH__)?__LOCK_REGION_LENGTH__:0x400
+                0x00000400                __SIGNATURE_REGION_LENGTH__ = DEFINED (__SIGNATURE_REGION_LENGTH__)?__SIGNATURE_REGION_LENGTH__:0x400
+                0x00000400                __USER_SIGNATURE_REGION_LENGTH__ = DEFINED (__USER_SIGNATURE_REGION_LENGTH__)?__USER_SIGNATURE_REGION_LENGTH__:0x400
+                0x00800060                __DATA_REGION_ORIGIN__ = DEFINED (__DATA_REGION_ORIGIN__)?__DATA_REGION_ORIGIN__:0x800060
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0xca0
+ *(.vectors)
+ .vectors       0x00000000       0x54 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+                0x00000054                . = ALIGN (0x2)
+                0x00000054                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000054        0x0 linker stubs
+ *(.trampolines*)
+                0x00000054                __trampolines_end = .
+ *libprintf_flt.a:*(.progmem.data)
+ *libc.a:*(.progmem.data)
+ *(.progmem*)
+                0x00000054                . = ALIGN (0x2)
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000054                __ctors_start = .
+ *(.ctors)
+                0x00000054                __ctors_end = .
+                0x00000054                __dtors_start = .
+ *(.dtors)
+                0x00000054                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000054        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+                0x00000054                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000054        0xc c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000060       0x16 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x00000060                __do_copy_data
+ .init4         0x00000076       0x10 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000076                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000086        0x8 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+ *(.init9)
+ *(.text)
+ .text          0x0000008e        0x4 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+                0x0000008e                __vector_12
+                0x0000008e                __bad_interrupt
+                0x0000008e                __vector_6
+                0x0000008e                __vector_11
+                0x0000008e                __vector_13
+                0x0000008e                __vector_17
+                0x0000008e                __vector_19
+                0x0000008e                __vector_7
+                0x0000008e                __vector_5
+                0x0000008e                __vector_4
+                0x0000008e                __vector_9
+                0x0000008e                __vector_15
+                0x0000008e                __vector_8
+                0x0000008e                __vector_14
+                0x0000008e                __vector_10
+                0x0000008e                __vector_16
+                0x0000008e                __vector_18
+                0x0000008e                __vector_20
+ .text          0x00000092        0x0 main.o
+ .text          0x00000092      0x13e ASET_MODE_program.o
+                0x000000f2                aset_mode_init
+                0x00000132                aset_mode_setTemp
+ .text          0x000001d0       0x64 ARUN_MODE_program.o
+                0x000001e4                arun_mode_init
+                0x00000204                arun_mode_start
+ .text          0x00000234       0x3e ACTR_MODE_program.o
+                0x00000234                actr_mode_init_System
+                0x00000240                actr_mode_switchStR
+                0x00000258                actr_mode_controlmode
+ .text          0x00000272       0xe6 MDIO_program.o
+                0x00000272                mdio_setPinStatus
+                0x000002da                mdio_setPinValue
+                0x00000318                mdio_togglePinValue
+                0x00000332                mdio_getPinValue
+ .text          0x00000358      0x194 MEXTI_program.o
+                0x00000358                mexti_enableExternalInterrupt
+                0x00000378                mexti_disableExternalInterrupt
+                0x00000398                mexti_attachISR
+                0x000003f6                __vector_1
+                0x00000448                __vector_2
+                0x0000049a                __vector_3
+ .text          0x000004ec       0x44 MADC_program.o
+                0x000004ec                madc_init
+                0x00000506                madc_singleConversion
+ .text          0x00000530      0x2fc MTIMER_program.o
+                0x0000053e                mtimer_init
+                0x00000596                mtimer_delayMs_synchronous
+                0x00000676                mtimer_delayMs_asynchronous
+                0x000006ca                mtimer_runPWM_signal
+                0x000006e6                mtimer_startPWM_signal
+                0x00000718                mtimer_stopPWM_signal
+                0x00000740                mtimer_getSignal_duty_and_freq
+ .text          0x0000082c       0x6c MTWI_program.o
+                0x0000082c                mtwi_init
+                0x00000834                mtwi_start
+                0x0000085a                mtwi_stop
+                0x00000866                mtwi_masterSend
+                0x00000874                mtwi_masterRecv_ACK
+                0x00000886                mtwi_masterRecv_NACK
+ .text          0x00000898       0x8a HLED_program.o
+                0x00000898                hled_init
+                0x000008bc                hled_ledValueON
+                0x000008e0                hled_ledValueOFF
+                0x00000904                hled_toggleLedValue
+ .text          0x00000922       0x44 HPBUTT_program.o
+                0x00000922                hpbutt_init
+                0x00000946                hpbutt_getStatus
+ .text          0x00000966       0xc4 HSEV_SEG_program.o
+                0x00000966                hsev_seg_init
+                0x000009b0                hsev_seg_enable
+                0x000009ca                hsev_seg_disable
+                0x000009e4                hsev_seg_displayNumber
+ .text          0x00000a2a      0x15a HEEP_program.o
+                0x00000a2a                heeprom_init
+                0x00000a2e                heeprom_writeByte
+                0x00000a6a                heeprom_writeDataStream
+                0x00000ac0                heeprom_readByte
+                0x00000b10                heeprom_readDataStream
+ .text          0x00000b84       0x4e HTEMP_SENSOR_program.o
+                0x00000b84                htemp_sensor_init
+                0x00000b98                htemp_sensor_Read
+ .text          0x00000bd2       0x1e HRELAY_program.o
+                0x00000bd2                hrelay_init
+                0x00000bdc                hrelay_switchON
+                0x00000be6                hrelay_switchOFF
+ .text          0x00000bf0        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .text          0x00000bf0        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x00000bf0        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text          0x00000bf0        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .text          0x00000bf0        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000bf0        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00000bf0        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00000bf0                . = ALIGN (0x2)
+ *(.text.*)
+ .text.startup  0x00000bf0        0xa main.o
+                0x00000bf0                main
+ .text.libgcc.mul
+                0x00000bfa        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .text.libgcc.div
+                0x00000bfa       0x18 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+                0x00000bfa                __udivmodqi4
+ .text.libgcc   0x00000c12        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .text.libgcc.prologue
+                0x00000c12        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .text.libgcc.builtins
+                0x00000c12        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .text.libgcc.fmul
+                0x00000c12        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .text.libgcc.fixed
+                0x00000c12        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .text.libgcc.mul
+                0x00000c12        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.div
+                0x00000c12       0x28 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000c12                __udivmodhi4
+ .text.libgcc   0x00000c3a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.prologue
+                0x00000c3a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.builtins
+                0x00000c3a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fmul
+                0x00000c3a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fixed
+                0x00000c3a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .text.libgcc.mul
+                0x00000c3a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.div
+                0x00000c3a       0x44 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+                0x00000c3a                __udivmodsi4
+ .text.libgcc   0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.builtins
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fmul
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fixed
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .text.libgcc.mul
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x00000c7e        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x00000c7e       0x1e c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00000c7e                __umulhisi3
+ .text.libgcc.div
+                0x00000c9c        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+ .text.libgcc   0x00000c9c        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+ .text.libgcc.prologue
+                0x00000c9c        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+ .text.libgcc.builtins
+                0x00000c9c        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+ .text.libgcc.fmul
+                0x00000c9c        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+ .text.libgcc.fixed
+                0x00000c9c        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+                0x00000c9c                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000c9c        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x00000c9c                _exit
+                0x00000c9c                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000c9c        0x4 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000ca0                _etext = .
+
+.data           0x00800060       0x1a load address 0x00000ca0
+                0x00800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800060        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+ .data          0x00800060        0x0 main.o
+ .data          0x00800060        0x0 ASET_MODE_program.o
+ .data          0x00800060        0x0 ARUN_MODE_program.o
+ .data          0x00800060        0x1 ACTR_MODE_program.o
+                0x00800060                setTEMP
+ .data          0x00800061        0x0 MDIO_program.o
+ .data          0x00800061        0x0 MEXTI_program.o
+ .data          0x00800061        0x0 MADC_program.o
+ .data          0x00800061        0x0 MTIMER_program.o
+ .data          0x00800061        0x0 MTWI_program.o
+ .data          0x00800061        0x0 HLED_program.o
+ .data          0x00800061        0x0 HPBUTT_program.o
+ .data          0x00800061        0x0 HSEV_SEG_program.o
+ .data          0x00800061        0x0 HEEP_program.o
+ .data          0x00800061        0x0 HTEMP_SENSOR_program.o
+ .data          0x00800061        0x0 HRELAY_program.o
+ .data          0x00800061        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .data          0x00800061        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x00800061        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .data          0x00800061        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .data          0x00800061        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .data          0x00800061        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00800061        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+ *(.data*)
+ *(.gnu.linkonce.d*)
+ *(.rodata)
+ .rodata        0x00800061       0x18 MDIO_program.o
+ *(.rodata*)
+ *(.gnu.linkonce.r*)
+                0x0080007a                . = ALIGN (0x2)
+ *fill*         0x00800079        0x1 
+                0x0080007a                _edata = .
+                0x0080007a                PROVIDE (__data_end, .)
+
+.bss            0x0080007a       0x10
+                0x0080007a                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x0080007a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+ .bss           0x0080007a        0x0 main.o
+ .bss           0x0080007a        0x1 ASET_MODE_program.o
+ .bss           0x0080007b        0x1 ARUN_MODE_program.o
+ .bss           0x0080007c        0x3 ACTR_MODE_program.o
+                0x0080007c                curTEMP
+                0x0080007d                runMODE
+                0x0080007e                setMODE
+ .bss           0x0080007f        0x0 MDIO_program.o
+ .bss           0x0080007f        0x6 MEXTI_program.o
+ .bss           0x00800085        0x0 MADC_program.o
+ .bss           0x00800085        0x3 MTIMER_program.o
+ .bss           0x00800088        0x0 MTWI_program.o
+ .bss           0x00800088        0x0 HLED_program.o
+ .bss           0x00800088        0x0 HPBUTT_program.o
+ .bss           0x00800088        0x0 HSEV_SEG_program.o
+ .bss           0x00800088        0x0 HEEP_program.o
+ .bss           0x00800088        0x2 HTEMP_SENSOR_program.o
+ .bss           0x0080008a        0x0 HRELAY_program.o
+ .bss           0x0080008a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .bss           0x0080008a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x0080008a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .bss           0x0080008a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .bss           0x0080008a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .bss           0x0080008a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x0080008a        0x0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+ *(.bss*)
+ *(COMMON)
+                0x0080008a                PROVIDE (__bss_end, .)
+                0x00000ca0                __data_load_start = LOADADDR (.data)
+                0x00000cba                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x0080008a        0x0
+                [!provide]                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                [!provide]                PROVIDE (__noinit_end, .)
+                0x0080008a                _end = .
+                [!provide]                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x11
+ *(.comment)
+ .comment       0x00000000       0x11 main.o
+                                 0x12 (size before relaxing)
+ .comment       0x00000011       0x12 ASET_MODE_program.o
+ .comment       0x00000011       0x12 ARUN_MODE_program.o
+ .comment       0x00000011       0x12 ACTR_MODE_program.o
+ .comment       0x00000011       0x12 MDIO_program.o
+ .comment       0x00000011       0x12 MEXTI_program.o
+ .comment       0x00000011       0x12 MADC_program.o
+ .comment       0x00000011       0x12 MTIMER_program.o
+ .comment       0x00000011       0x12 MTWI_program.o
+ .comment       0x00000011       0x12 HLED_program.o
+ .comment       0x00000011       0x12 HPBUTT_program.o
+ .comment       0x00000011       0x12 HSEV_SEG_program.o
+ .comment       0x00000011       0x12 HEEP_program.o
+ .comment       0x00000011       0x12 HTEMP_SENSOR_program.o
+ .comment       0x00000011       0x12 HRELAY_program.o
+
+.note.gnu.avr.deviceinfo
+                0x00000000       0x3c
+ .note.gnu.avr.deviceinfo
+                0x00000000       0x3c c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0xe0
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .debug_aranges
+                0x00000020       0x20 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_aranges
+                0x00000040       0x20 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .debug_aranges
+                0x00000060       0x20 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .debug_aranges
+                0x00000080       0x20 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .debug_aranges
+                0x000000a0       0x20 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .debug_aranges
+                0x000000c0       0x20 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000      0xa03
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x4e6 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+ .debug_info    0x000004e6       0xbb c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .debug_info    0x000005a1       0xbb c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_info    0x0000065c       0xbb c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .debug_info    0x00000717       0xbb c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .debug_info    0x000007d2       0xbb c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .debug_info    0x0000088d       0xbb c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .debug_info    0x00000948       0xbb c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+
+.debug_abbrev   0x00000000      0x52f
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x4a3 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+ .debug_abbrev  0x000004a3       0x14 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .debug_abbrev  0x000004b7       0x14 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_abbrev  0x000004cb       0x14 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .debug_abbrev  0x000004df       0x14 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .debug_abbrev  0x000004f3       0x14 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .debug_abbrev  0x00000507       0x14 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .debug_abbrev  0x0000051b       0x14 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+
+.debug_line     0x00000000      0x4d8
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x00000000       0x1a c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+ .debug_line    0x0000001a       0x9e c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodqi4.o)
+ .debug_line    0x000000b8       0xce c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodhi4.o)
+ .debug_line    0x00000186      0x122 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_udivmodsi4.o)
+ .debug_line    0x000002a8       0x62 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .debug_line    0x0000030a       0x98 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+ .debug_line    0x000003a2       0x86 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+ .debug_line    0x00000428       0xb0 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_umulhisi3.o)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str      0x00000000      0x196
+ *(.debug_str)
+ .debug_str     0x00000000      0x196 c:/users/tarek/desktop/embedded sys/avr/avr/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5/crtatmega32.o
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(main.elf elf32-avr)
+LOAD linker stubs
