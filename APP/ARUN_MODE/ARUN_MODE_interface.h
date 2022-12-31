@@ -24,5 +24,11 @@ void arun_mode_init(void);
  */
 void arun_mode_start(void);
 
+/**
+ * @brief This Function to check Temperature every 100 ms
+ * 
+ */
+void arun_mode_checkTemp(void);
+
 
 #endif /*__ARUN_MODE_INTERFACE_H__*/

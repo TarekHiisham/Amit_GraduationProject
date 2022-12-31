@@ -6,7 +6,6 @@
 /*                                         configuration macros                                    */
 /***************************************************************************************************/
 
-#define PERIOD_CHECK               (100)
 
 #define TEMPSENS_CONVERTION        (100)
 

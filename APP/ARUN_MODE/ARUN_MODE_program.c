@@ -3,6 +3,7 @@
 /***************************************************************************************************/
 #include "LSTD_TYPES.h"
 #include "LBIT_MATH.h"
+#include "util/delay.h"
 
 /*------------------------------- Include modules interfaces used in setting mode ---------------- */
 #include "MTIMER_interface.h"
@@ -23,17 +24,17 @@
 /*                                           Common Macros                                         */
 /***************************************************************************************************/
 
-#define READING        (10)
-#define CHECK_TIME     (10)
-
+#define READING              (10)
+#define CHECK_TIME           (10)
+#define SEV_SEGMENT_FREQ1    (10)
 /***************************************************************************************************/
 /*                                       Functions' definitions                                    */
 /***************************************************************************************************/
 
-static u8_t reading_Avg = 0 ;
-static u8_t gu8_counter = 0 ; 
+static u16_t reading_Avg = 0 ;
+static u8_t  gu8_counter = 0 ; 
 
-static void arun_mode_checkTemp(void)
+void arun_mode_checkTemp(void)
 {
     /*getting reading of ADC*/
     htemp_sensor_Read(&curTEMP) ;
@@ -44,20 +45,24 @@ static void arun_mode_checkTemp(void)
     /*Increament counter*/
     gu8_counter++ ;
 
+    hled_toggleLedValue(LED0);
+
     /*Return Function*/
     return;
 }
 
 void arun_mode_init(void)
 {
-    /*ُEnable External Interrupt 0 , 1*/
+    hled_init(LED0);
+
+    /*ُEnable External Interrupt 2*/
     mexti_enableExternalInterrupt(INT2_REQ_NUM) ;
+
+    /*Intializing Timer0*/
+    mtimer_init(TIMER_CHANNEL_0 , TIMER0_DELAY_MODE , TIMER2_DELAY_PRESCALER);
 
     /*Serving ISR when press ON Button*/
     mexti_attachISR(INT2_REQ_NUM , FALLING_EDGE_MODE , actr_mode_switchStR);
-
-    /*checking on reading sensor temperature every 100 ms*/
-    mtimer_delayMs_asynchronous(TIMER_CHANNEL_0 , PERIOD_CHECK , arun_mode_checkTemp , TIMER_PERIODIC_OPERATION) ;
 
     /*Intializing push Buttons Status*/
     hpbutt_init(PUSH_BUTTON_0);
@@ -74,17 +79,27 @@ void arun_mode_init(void)
 
 void arun_mode_start(void)
 {
+    
     /*while run flag is raised*/
     while(runMODE == SWITCHON)
     {
-
+         
         /* after getting 10 reading in reading_Arr */
         if(gu8_counter == CHECK_TIME)
         {
             /*
                 display current Temperature on 7seg 
             */
-        
+            hsev_seg_enable(SEV_SEG_1);
+            hsev_seg_displayNumber(curTEMP / 10);
+            _delay_ms(SEV_SEGMENT_FREQ1);
+            hsev_seg_disable(SEV_SEG_1);
+
+            hsev_seg_enable(SEV_SEG_2);
+            hsev_seg_displayNumber(curTEMP % 10);
+            _delay_ms(SEV_SEGMENT_FREQ1);
+            hsev_seg_disable(SEV_SEG_2);
+            
             /*Calculate average of 10 reading*/
             reading_Avg /= READING ;
 

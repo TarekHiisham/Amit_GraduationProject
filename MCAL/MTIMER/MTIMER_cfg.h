@@ -13,9 +13,6 @@
 /*ICU frequency value*/
 #define TIMER_ICU_FREQ_DIVIDER          (250000)
 
-/*Using another RTS*/
-#define USING_ANOTHER_RTS  (1)
-
 /*Clear to compare mode 1 ms delay*/
 #define TIMER_1_MS_DELAY                (250)
 
