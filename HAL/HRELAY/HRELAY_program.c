@@ -27,7 +27,7 @@ void hrelay_switchON(void)
 {
 
     /*switch on pin value when swetching*/
-    mdio_setPinValue(config_RELAY_PORT , config_RELAY_PIN , HIGH);
+    mdio_setPinValue(config_RELAY_PORT , config_RELAY_PIN , HIGH );
     
     /*Return Function*/
     return;

@@ -22,6 +22,8 @@
 #define NUMBER_8     (8)
 #define NUMBER_9     (9)
 
+#define SEV_SEGMENT_FREQ    (10)
+
 /***************************************************************************************************/
 /*                                        Functions' prototypes                                    */
 /***************************************************************************************************/
@@ -32,20 +34,6 @@
  * @param au8_sev_segNumber 
  */
 void hsev_seg_init(u8_t au8_sev_segNumber);
-
-/**
- * @brief This Function Enable 7Seg
- * 
- * @param au8_sev_segNumber 
- */
-void hsev_seg_enable(u8_t au8_sev_segNumber);
-
-/**
- * @brief This Function disable 7Seg
- * 
- * @param au8_sev_segNumber 
- */
-void hsev_seg_disable(u8_t au8_sev_segNumber);
 
 /**
  * @brief This Function to display number on 7seg

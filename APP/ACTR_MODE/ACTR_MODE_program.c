@@ -10,7 +10,6 @@
 #include "ACTR_MODE_cfg.h"
 #include "ACTR_MODE_interface.h"
 #include "avr/interrupt.h"
-#include "HLED_interface.h"
 
 /***************************************************************************************************/
 /*                                       Functions' definitions                                    */

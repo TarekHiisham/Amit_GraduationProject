@@ -19,7 +19,6 @@
 #include "ARUN_MODE_interface.h"
 #include "ACTR_MODE_interface.h"
 
-
 /***************************************************************************************************/
 /*                                           Common Macros                                         */
 /***************************************************************************************************/
@@ -27,6 +26,7 @@
 #define READING              (10)
 #define CHECK_TIME           (10)
 #define SEV_SEGMENT_FREQ1    (10)
+#define FIVE_DEGREE          (5)
 /***************************************************************************************************/
 /*                                       Functions' definitions                                    */
 /***************************************************************************************************/
@@ -83,40 +83,48 @@ void arun_mode_start(void)
     /*while run flag is raised*/
     while(runMODE == SWITCHON)
     {
-         
+        /*
+            display current Temperature on 7seg 
+        */    
+        hsev_seg_displayNumber(curTEMP);
+            
         /* after getting 10 reading in reading_Arr */
         if(gu8_counter == CHECK_TIME)
         {
-            /*
-                display current Temperature on 7seg 
-            */
-            hsev_seg_enable(SEV_SEG_1);
-            hsev_seg_displayNumber(curTEMP / 10);
-            _delay_ms(SEV_SEGMENT_FREQ1);
-            hsev_seg_disable(SEV_SEG_1);
-
-            hsev_seg_enable(SEV_SEG_2);
-            hsev_seg_displayNumber(curTEMP % 10);
-            _delay_ms(SEV_SEGMENT_FREQ1);
-            hsev_seg_disable(SEV_SEG_2);
-            
             /*Calculate average of 10 reading*/
             reading_Avg /= READING ;
 
             /*
                 -compare Average with set temperature
                 - if Avg = setTemp for 3 second
-                    - switchoff runMODE flag
-
+                    - switchoff runMODE flag    
+            */
+            /*
                 - if Avg > setTEMP by 5 degree 
                     -Turn On cooling , Turn Off Heating by switching Relay
-                
+            */
+            if( (reading_Avg - setTEMP ) >= FIVE_DEGREE )
+            {
+                hrelay_switchON();
+            }
+            /*    
                 - if Avg < setTEMP by 5 degree 
                     -Turn Off cooling , Turn On Heating by switching Relay
             */
-        
+            else if ((setTEMP - reading_Avg ) >= FIVE_DEGREE)
+            {
+                hrelay_switchOFF();
+            }
+            else 
+            {
+                /*Do Nothing*/
+            }
+
             /*reset counter*/
             gu8_counter = 0 ;
+
+            /*reset average*/
+            reading_Avg = 0 ;
         }
         else 
         {

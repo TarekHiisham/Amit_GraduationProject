@@ -17,10 +17,6 @@
 #include "util/delay.h"
 
 /***************************************************************************************************/
-/*                                           Common Macros                                         */
-/***************************************************************************************************/
-#define SEV_SEGMENT_FREQ            (10)
-/***************************************************************************************************/
 /*                                       Functions' definitions                                    */
 /***************************************************************************************************/
 
@@ -132,15 +128,7 @@ void aset_mode_setTemp(void)
     /*display 1 second*/    
     for(u8_t i = 0 ; i < (BLINKING/20) ; i++)
     {    
-    hsev_seg_enable(SEV_SEG_1);
-    hsev_seg_displayNumber(setTEMP / 10);
-    _delay_ms(SEV_SEGMENT_FREQ);
-    hsev_seg_disable(SEV_SEG_1);
-    
-    hsev_seg_enable(SEV_SEG_2);
-    hsev_seg_displayNumber(setTEMP % 10);
-    _delay_ms(SEV_SEGMENT_FREQ);
-    hsev_seg_disable(SEV_SEG_2);
+        hsev_seg_displayNumber(setTEMP);
     }
 
     /*increament valid time in setting mode*/

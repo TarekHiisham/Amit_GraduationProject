@@ -61,7 +61,7 @@ void hsev_seg_init(u8_t au8_sev_segNumber)
     return;
 }
 
-void hsev_seg_enable(u8_t au8_sev_segNumber)
+static void hsev_seg_enable(u8_t au8_sev_segNumber)
 {
     /*Switching over seven segment modules*/
     switch(au8_sev_segNumber)
@@ -95,7 +95,7 @@ void hsev_seg_enable(u8_t au8_sev_segNumber)
     return;
 }
 
-void hsev_seg_disable(u8_t au8_sev_segNumber)
+static void hsev_seg_disable(u8_t au8_sev_segNumber)
 {
     /*Switching over seven segment modules*/
     switch(au8_sev_segNumber)
@@ -129,7 +129,7 @@ void hsev_seg_disable(u8_t au8_sev_segNumber)
     return;
 }
 
-void hsev_seg_displayNumber(u8_t au8_number)
+static void hsev_seg_displayDigit(u8_t au8_number)
 {
     /*Checking if the number is smaller than or equal 9 or not*/
     if(au8_number <= NUMBER_9)
@@ -149,3 +149,20 @@ void hsev_seg_displayNumber(u8_t au8_number)
     return;
 }
 
+void hsev_seg_displayNumber(u8_t au8_number)
+{
+    
+    /*display number using 2 sevsegment*/
+    hsev_seg_enable(SEV_SEG_1);
+    hsev_seg_displayDigit(au8_number / 10);
+    _delay_ms(SEV_SEGMENT_FREQ);
+    hsev_seg_disable(SEV_SEG_1);
+    
+    hsev_seg_enable(SEV_SEG_2);
+    hsev_seg_displayDigit(au8_number % 10);
+    _delay_ms(SEV_SEGMENT_FREQ);
+    hsev_seg_disable(SEV_SEG_2);
+
+    /*Return Function*/
+    return;
+}
