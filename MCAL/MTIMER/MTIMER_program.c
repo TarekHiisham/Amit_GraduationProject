@@ -103,7 +103,7 @@ static void mtimer_start(u8_t au8_timerChannel)
     return;
 }
 
-static void mtimer_stop(u8_t au8_timerChannel)
+void mtimer_stop(u8_t au8_timerChannel)
 {
     /*Switching over timer channels*/
     switch(au8_timerChannel)

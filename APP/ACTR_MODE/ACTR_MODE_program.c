@@ -40,16 +40,25 @@ void actr_mode_switchStR(void)
     heeprom_writeByte(EEPROM_BLOCK_0 , 10 ,setTEMP) ;
 
     /*turn off selected mode*/
-    setMODE = SWITCHOFF ;
+    TURNOFF_MODE(setMODE);
 
     /*turn on selected mode*/
-    runMODE = SWITCHON ;
+    TURNON_MODE(runMODE);
 
     /*checking on reading sensor temperature every 100 ms*/
     mtimer_delayMs_asynchronous(TIMER_CHANNEL_0 , PERIOD_CHECK , arun_mode_checkTemp , TIMER_PERIODIC_OPERATION) ;
 
     /*Return Function*/
     return ;
+}
+
+static void acrt_mode_sleepmode(void)
+{
+    /*stop timer*/
+    mtimer_stop(TIMER_CHANNEL_0);
+
+    /*Return Function*/
+    return;
 }
 
 void actr_mode_controlmode(void) 
@@ -71,6 +80,7 @@ void actr_mode_controlmode(void)
     else
     {
         /*run sleep mode*/
+        acrt_mode_sleepmode();
     }
     
     /*Return Function*/

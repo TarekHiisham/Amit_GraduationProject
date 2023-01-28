@@ -5,7 +5,7 @@
 #include "LBIT_MATH.h"
 #include "util/delay.h"
 
-/*------------------------------- Include modules interfaces used in setting mode ---------------- */
+/*------------------------ Include modules interfaces used in setting mode ----------------------- */
 #include "MTIMER_interface.h"
 #include "MEXTI_interface.h"
 #include "HPBUTT_interface.h"
@@ -27,12 +27,15 @@
 #define CHECK_TIME           (10)
 #define SEV_SEGMENT_FREQ1    (10)
 #define FIVE_DEGREE          (5)
+#define RESET                (0)
+#define THREESECOND          (3)
 /***************************************************************************************************/
 /*                                       Functions' definitions                                    */
 /***************************************************************************************************/
 
-static u16_t reading_Avg = 0 ;
-static u8_t  gu8_counter = 0 ; 
+static u16_t reading_Avg    = RESET ;
+static u8_t  gu8_counter    = RESET ; 
+static u8_t  gu8_endProcess = THREESECOND ;
 
 void arun_mode_checkTemp(void)
 {
@@ -44,8 +47,6 @@ void arun_mode_checkTemp(void)
 
     /*Increament counter*/
     gu8_counter++ ;
-
-    hled_toggleLedValue(LED0);
 
     /*Return Function*/
     return;
@@ -91,40 +92,67 @@ void arun_mode_start(void)
         /* after getting 10 reading in reading_Arr */
         if(gu8_counter == CHECK_TIME)
         {
+            
             /*Calculate average of 10 reading*/
             reading_Avg /= READING ;
 
+            /* compare Average with set temperature  */
+            
             /*
-                -compare Average with set temperature
-                - if Avg = setTemp for 3 second
-                    - switchoff runMODE flag    
+                -if average of reading = set temperature for 3 second
+                    -turn off run mode 
             */
+            if((u8_t)reading_Avg == setTEMP)
+            {
+                gu8_endProcess-- ;
+                if(gu8_endProcess == RESET)
+                {
+                    /*Turn led off*/
+                    hled_ledValueOFF(LED0);
+
+                    TURNOFF_MODE(runMODE);
+                }
+                else
+                {
+                    /*Do Nothing*/
+                }
+            }
             /*
                 - if Avg > setTEMP by 5 degree 
                     -Turn On cooling , Turn Off Heating by switching Relay
             */
-            if( (reading_Avg - setTEMP ) >= FIVE_DEGREE )
+            else if(((u8_t)reading_Avg - setTEMP) >= FIVE_DEGREE )
             {
-                hrelay_switchON();
+                /*swetch relay on to run cool ele.*/
+                hrelay_switchON();  
+
+                /*turn led on*/
+                hled_ledValueON(LED0);
             }
+
             /*    
                 - if Avg < setTEMP by 5 degree 
                     -Turn Off cooling , Turn On Heating by switching Relay
             */
-            else if ((setTEMP - reading_Avg ) >= FIVE_DEGREE)
+            else if ((setTEMP - (u8_t)reading_Avg) >= FIVE_DEGREE)
             {
+                /*swetch relay off to run heat ele.*/
                 hrelay_switchOFF();
+
+                /*toggle led*/
+                hled_toggleLedValue(LED0);              
             }
-            else 
+            
+            else
             {
                 /*Do Nothing*/
             }
 
             /*reset counter*/
-            gu8_counter = 0 ;
+            gu8_counter = RESET ;
 
             /*reset average*/
-            reading_Avg = 0 ;
+            reading_Avg = RESET ;
         }
         else 
         {

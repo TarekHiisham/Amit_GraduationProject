@@ -115,4 +115,11 @@ void mtimer_stopPWM_signal(u8_t au8_timerChannel);
  */
 void mtimer_getSignal_duty_and_freq(u8_t* pu8_duty, u32_t* pu32_freq);
 
+/**
+ * @brief This function to stop timer
+ * 
+ * @param au8_timerChannel 
+ */
+void mtimer_stop(u8_t au8_timerChannel);
+
 #endif /*__MTIMER_INTERFACE_H__*/

@@ -30,6 +30,9 @@ static void Increament(void)
     {          
         /*raising set mode flag to ON*/
         setMODE = SWITCHON ;
+
+        /*Reset Deafault of set temperature*/
+        setTEMP = DEFAULT_SET_TEMP;
     }
 
     /*if set mode are already run*/
@@ -65,6 +68,9 @@ static void Decreament(void)
     {
         /*raising set mode flag to ON*/
         setMODE = SWITCHON ;
+
+        /*Reset Deafault of set temperature*/
+        setTEMP = DEFAULT_SET_TEMP;
     }
     
     /*if set mode are already run*/

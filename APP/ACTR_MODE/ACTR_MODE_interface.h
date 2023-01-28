@@ -12,6 +12,8 @@
 /*Default Setting Temperature*/
 #define DEFAULT_SET_TEMP                     (60)
 
+#define TURNOFF_MODE(MODE)                  (MODE = SWITCHOFF)
+#define TURNON_MODE(MODE)                   (MODE = SWITCHON)
 
 /***************************************************************************************************/
 /*                                        Functions' prototypes                                    */
