@@ -37,7 +37,7 @@ void actr_mode_init_System(void);
  * @brief This Function switches from setting mode to runnig mode
  * 
 */
-void actr_mode_switchStR(void) ;
+void actr_mode_switch(void) ;
 
 
 /**

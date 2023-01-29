@@ -33,20 +33,19 @@ void actr_mode_init_System(void)
     return;
 }
 
-void actr_mode_switchStR(void)
+void actr_mode_switch(void)
 {
-
-    /*stooring setting Temp while switching*/
-    heeprom_writeByte(EEPROM_BLOCK_0 , 10 ,setTEMP) ;
-
-    /*turn off selected mode*/
+    /*turn off setting mode*/
     TURNOFF_MODE(setMODE);
 
-    /*turn on selected mode*/
+    /*turn on running mode*/
     TURNON_MODE(runMODE);
-
+    
     /*checking on reading sensor temperature every 100 ms*/
     mtimer_delayMs_asynchronous(TIMER_CHANNEL_0 , PERIOD_CHECK , arun_mode_checkTemp , TIMER_PERIODIC_OPERATION) ;
+   
+    /*stooring setting Temp while switching*/
+    heeprom_writeByte(EEPROM_BLOCK_0 , 10 ,setTEMP) ;
 
     /*Return Function*/
     return ;
@@ -84,5 +83,5 @@ void actr_mode_controlmode(void)
     }
     
     /*Return Function*/
-    return ;
+    return;
 }

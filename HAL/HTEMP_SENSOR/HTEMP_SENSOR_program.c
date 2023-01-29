@@ -29,12 +29,15 @@ void htemp_sensor_init(void)
 void htemp_sensor_Read(u8_t* p8_temp)
 {
     static u16_t au16_reading ;
+    static u32_t au32_Voult ;
 
     /*converting the reading*/
     madc_singleConversion(config_TEMPSENSOR_CHANNEL ,&au16_reading);
     
     /*converting to celesios*/
-    *(p8_temp) = (u8_t)((au16_reading * 500)/1023) ;
+    au32_Voult = (u32_t)au16_reading * 500;
+
+    *(p8_temp) = (u8_t)(au32_Voult / 1023);
 
     /*Return Function*/
     return;

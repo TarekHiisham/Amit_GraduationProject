@@ -60,10 +60,10 @@ void arun_mode_init(void)
     mexti_enableExternalInterrupt(INT2_REQ_NUM) ;
 
     /*Intializing Timer0*/
-    mtimer_init(TIMER_CHANNEL_0 , TIMER0_DELAY_MODE , TIMER2_DELAY_PRESCALER);
+    mtimer_init(TIMER_CHANNEL_0 , TIMER0_DELAY_MODE , TIMER_DELAY_PRESCALER);
 
     /*Serving ISR when press ON Button*/
-    mexti_attachISR(INT2_REQ_NUM , FALLING_EDGE_MODE , actr_mode_switchStR);
+    mexti_attachISR(INT2_REQ_NUM , FALLING_EDGE_MODE , actr_mode_switch);
 
     /*Intializing push Buttons Status*/
     hpbutt_init(PUSH_BUTTON_0);
@@ -110,6 +110,8 @@ void arun_mode_start(void)
                     /*Turn led off*/
                     hled_ledValueOFF(LED0);
 
+                    hrelay_switchOFF();
+
                     TURNOFF_MODE(runMODE);
                 }
                 else
@@ -128,6 +130,9 @@ void arun_mode_start(void)
 
                 /*turn led on*/
                 hled_ledValueON(LED0);
+
+                gu8_endProcess = THREESECOND ;              
+
             }
 
             /*    
@@ -140,7 +145,9 @@ void arun_mode_start(void)
                 hrelay_switchOFF();
 
                 /*toggle led*/
-                hled_toggleLedValue(LED0);              
+                hled_toggleLedValue(LED0);
+
+                gu8_endProcess = THREESECOND ;              
             }
             
             else
