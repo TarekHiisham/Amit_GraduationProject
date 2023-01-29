@@ -35,6 +35,7 @@ void actr_mode_init_System(void)
 
 void actr_mode_switch(void)
 {
+
     /*turn off setting mode*/
     TURNOFF_MODE(setMODE);
 
@@ -49,6 +50,21 @@ void actr_mode_switch(void)
 
     /*Return Function*/
     return ;
+}
+
+void actr_mode_ResetSystem(void)
+{
+    /*turnning off setting mode flag*/
+    TURNOFF_MODE(setMODE);
+
+    /*turnning off running mode flag*/
+    TURNOFF_MODE(runMODE);
+
+    /*set sefault current temp*/
+    setTEMP = DEFAULT_SET_TEMP ;
+
+    /*set default current temp*/
+    curTEMP = DEFAULT_CUR_TEMP ;
 }
 
 static void acrt_mode_sleepmode(void)

@@ -28,14 +28,14 @@
 #define SEV_SEGMENT_FREQ1    (10)
 #define FIVE_DEGREE          (5)
 #define RESET                (0)
-#define THREESECOND          (3)
+#define ENDTIMEPROG          (5)
 /***************************************************************************************************/
 /*                                       Functions' definitions                                    */
 /***************************************************************************************************/
 
 static u16_t reading_Avg    = RESET ;
 static u8_t  gu8_counter    = RESET ; 
-static u8_t  gu8_endProcess = THREESECOND ;
+static u8_t  gu8_endProcess = ENDTIMEPROG ;
 
 void arun_mode_checkTemp(void)
 {
@@ -112,7 +112,7 @@ void arun_mode_start(void)
 
                     hrelay_switchOFF();
 
-                    TURNOFF_MODE(runMODE);
+                    actr_mode_ResetSystem();
                 }
                 else
                 {
@@ -131,10 +131,10 @@ void arun_mode_start(void)
                 /*turn led on*/
                 hled_ledValueON(LED0);
 
-                gu8_endProcess = THREESECOND ;              
+                /*reset end process time*/
+                gu8_endProcess = ENDTIMEPROG ;              
 
             }
-
             /*    
                 - if Avg < setTEMP by 5 degree 
                     -Turn Off cooling , Turn On Heating by switching Relay
@@ -147,7 +147,8 @@ void arun_mode_start(void)
                 /*toggle led*/
                 hled_toggleLedValue(LED0);
 
-                gu8_endProcess = THREESECOND ;              
+                /*reset end process time*/
+                gu8_endProcess = ENDTIMEPROG ;              
             }
             
             else

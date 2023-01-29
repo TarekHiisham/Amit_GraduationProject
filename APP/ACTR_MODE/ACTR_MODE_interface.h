@@ -39,6 +39,11 @@ void actr_mode_init_System(void);
 */
 void actr_mode_switch(void) ;
 
+/**
+ * @brief This Function to reset system parameters 
+ * 
+ */
+void actr_mode_ResetSystem(void);
 
 /**
  * @brief Thish Function control which mode run 

@@ -150,9 +150,8 @@ void aset_mode_setTemp(void)
       /*Reset setMODE flag*/
       setMODE  = SWITCHOFF ; 
       
-      /*Reset setTemp with default*/ 
-      setTEMP = DEFAULT_SET_TEMP ;     
-    
+      /*Reset system with default*/ 
+      actr_mode_ResetSystem();    
     }
     else
     {
