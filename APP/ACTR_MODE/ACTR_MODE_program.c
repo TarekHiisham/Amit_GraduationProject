@@ -5,6 +5,8 @@
 #include "LBIT_MATH.h"
 #include "HEEP_interface.h"
 #include "MTIMER_interface.h"
+#include "HRELAY_interface.h"
+#include "HLED_interface.h"
 #include "ASET_MODE_interface.h"
 #include "ARUN_MODE_interface.h"
 #include "ACTR_MODE_cfg.h"
@@ -35,7 +37,8 @@ void actr_mode_init_System(void)
 
 void actr_mode_switch(void)
 {
-
+    if(setMODE == SWITCHON && runMODE == SWITCHOFF)
+    {
     /*turn off setting mode*/
     TURNOFF_MODE(setMODE);
 
@@ -47,6 +50,28 @@ void actr_mode_switch(void)
    
     /*stooring setting Temp while switching*/
     heeprom_writeByte(EEPROM_BLOCK_0 , 10 ,setTEMP) ;
+    }
+
+    else if(setMODE == SWITCHOFF && runMODE == SWITCHON)
+    {
+        /*reset system in case turn off during process*/
+        actr_mode_ResetSystem();
+    }
+
+    else if(setMODE == SWITCHON && runMODE == SWITCHON)
+    {
+        /* Invalid case */
+    }
+
+    else if(setMODE == SWITCHOFF && runMODE == SWITCHOFF)
+    {
+        /* Invalid case */
+    }
+
+    else
+    {
+        /* Do Nothing */
+    }
 
     /*Return Function*/
     return ;
@@ -54,6 +79,15 @@ void actr_mode_switch(void)
 
 void actr_mode_ResetSystem(void)
 {
+    /*Turn led off*/
+    hled_ledValueOFF(LED0);
+
+    /*turn off relay*/
+    hrelay_switchOFF();
+
+    /*stop timer*/
+    mtimer_stop(TIMER_CHANNEL_0);
+
     /*turnning off setting mode flag*/
     TURNOFF_MODE(setMODE);
 
@@ -65,15 +99,6 @@ void actr_mode_ResetSystem(void)
 
     /*set default current temp*/
     curTEMP = DEFAULT_CUR_TEMP ;
-}
-
-static void acrt_mode_sleepmode(void)
-{
-    /*stop timer*/
-    mtimer_stop(TIMER_CHANNEL_0);
-
-    /*Return Function*/
-    return;
 }
 
 void actr_mode_controlmode(void) 
@@ -94,8 +119,7 @@ void actr_mode_controlmode(void)
     
     else
     {
-        /*run sleep mode*/
-        acrt_mode_sleepmode();
+        /* Do Nothing */
     }
     
     /*Return Function*/

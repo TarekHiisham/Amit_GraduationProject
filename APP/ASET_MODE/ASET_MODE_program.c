@@ -101,11 +101,11 @@ static void Decreament(void)
 void aset_mode_init(void)
 {
     /*ُEnable External Interrupt 0 , 1*/
-    mexti_enableExternalInterrupt(INT0_REQ_NUM);
+    mexti_enableExternalInterrupt(INT2_REQ_NUM);
     mexti_enableExternalInterrupt(INT1_REQ_NUM);
 
     /*Serving ISR when press + Button*/
-    mexti_attachISR(INT0_REQ_NUM , FALLING_EDGE_MODE , Increament );
+    mexti_attachISR(INT2_REQ_NUM , FALLING_EDGE_MODE , Increament);
     
     /*Serving ISR when press - Button*/
     mexti_attachISR(INT1_REQ_NUM , FALLING_EDGE_MODE , Decreament );

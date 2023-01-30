@@ -57,13 +57,13 @@ void arun_mode_init(void)
     hled_init(LED0);
 
     /*ُEnable External Interrupt 2*/
-    mexti_enableExternalInterrupt(INT2_REQ_NUM) ;
+    mexti_enableExternalInterrupt(INT0_REQ_NUM) ;
 
     /*Intializing Timer0*/
     mtimer_init(TIMER_CHANNEL_0 , TIMER0_DELAY_MODE , TIMER_DELAY_PRESCALER);
 
     /*Serving ISR when press ON Button*/
-    mexti_attachISR(INT2_REQ_NUM , FALLING_EDGE_MODE , actr_mode_switch);
+    mexti_attachISR(INT0_REQ_NUM , LOGICAL_CHANGE_MODE , actr_mode_switch);
 
     /*Intializing push Buttons Status*/
     hpbutt_init(PUSH_BUTTON_0);
@@ -106,12 +106,7 @@ void arun_mode_start(void)
             {
                 gu8_endProcess-- ;
                 if(gu8_endProcess == RESET)
-                {
-                    /*Turn led off*/
-                    hled_ledValueOFF(LED0);
-
-                    hrelay_switchOFF();
-
+                { 
                     actr_mode_ResetSystem();
                 }
                 else
