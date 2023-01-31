@@ -120,7 +120,7 @@ void arun_mode_start(void)
             */
             else if(((u8_t)reading_Avg - setTEMP) >= FIVE_DEGREE )
             {
-                /*swetch relay on to run cool ele.*/
+                /*switch relay on to run cool ele.*/
                 hrelay_switchON();  
 
                 /*turn led on*/

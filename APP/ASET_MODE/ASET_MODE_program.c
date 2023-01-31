@@ -20,6 +20,8 @@
 /*                                       Functions' definitions                                    */
 /***************************************************************************************************/
 
+#define FIVE_DEGREE        (5)
+
 /*private variables used here only*/
 static u8_t gu8_validtime = VALID_RESET ;
 
@@ -49,7 +51,7 @@ static void Increament(void)
         else 
         { 
             /*increament by one*/        
-            setTEMP ++ ;
+            setTEMP += FIVE_DEGREE ;
         } 
     }
     else
@@ -86,7 +88,7 @@ static void Decreament(void)
         }
         else
         {
-            setTEMP -- ;
+            setTEMP -= FIVE_DEGREE  ;
         }
     }
     else
