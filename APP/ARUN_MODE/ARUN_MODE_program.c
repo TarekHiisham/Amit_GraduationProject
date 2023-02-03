@@ -48,6 +48,78 @@ void arun_mode_checkTemp(void)
     /*Increament counter*/
     gu8_counter++ ;
 
+    /* after getting 10 reading in reading_Arr */
+    if(gu8_counter == CHECK_TIME)
+        {
+
+            /*Calculate average of 10 reading*/
+            reading_Avg /= READING ;
+
+            /* compare Average with set temperature  */
+
+            /*
+                -if average of reading = set temperature for 3 second
+                    -turn off run mode 
+            */
+            if((u8_t)reading_Avg == setTEMP)
+            {
+                gu8_endProcess-- ;
+                if(gu8_endProcess == RESET)
+                { 
+                    actr_mode_ResetSystem();
+                }
+                else
+                {
+                    /*Do Nothing*/
+                }
+            }
+            /*
+                - if Avg > setTEMP by 5 degree 
+                    -Turn On cooling , Turn Off Heating by switching Relay
+            */
+            else if(((u8_t)reading_Avg - setTEMP) >= FIVE_DEGREE )
+            {
+                /*switch relay on to run cool ele.*/
+                hrelay_switchON();  
+
+                /*turn led on*/
+                hled_ledValueON(LED0);
+
+                /*reset end process time*/
+                gu8_endProcess = ENDTIMEPROG ;              
+            }
+            /*    
+                - if Avg < setTEMP by 5 degree 
+                    -Turn Off cooling , Turn On Heating by switching Relay
+            */
+            else if ((setTEMP - (u8_t)reading_Avg) >= FIVE_DEGREE)
+            {
+                /*swetch relay off to run heat ele.*/
+                hrelay_switchOFF();
+
+                /*toggle led*/
+                hled_toggleLedValue(LED0);
+
+                /*reset end process time*/
+                gu8_endProcess = ENDTIMEPROG ;              
+            }
+            
+            else
+            {
+                /*Do Nothing*/
+            }
+            
+            /*reset counter*/
+            gu8_counter = RESET ;
+
+            /*reset average*/
+            reading_Avg = RESET ;
+        }
+        else 
+        {
+            /*Do Nothing*/
+        }
+
     /*Return Function*/
     return;
 }
@@ -83,84 +155,11 @@ void arun_mode_start(void)
     
     /*while run flag is raised*/
     while(runMODE == SWITCHON)
-    {
+    { 
         /*
-            display current Temperature on 7seg 
+        display current Temperature on 7seg 
         */    
-        hsev_seg_displayNumber(curTEMP);
-            
-        /* after getting 10 reading in reading_Arr */
-        if(gu8_counter == CHECK_TIME)
-        {
-            
-            /*Calculate average of 10 reading*/
-            reading_Avg /= READING ;
-
-            /* compare Average with set temperature  */
-            
-            /*
-                -if average of reading = set temperature for 3 second
-                    -turn off run mode 
-            */
-            if((u8_t)reading_Avg == setTEMP)
-            {
-                gu8_endProcess-- ;
-                if(gu8_endProcess == RESET)
-                { 
-                    actr_mode_ResetSystem();
-                }
-                else
-                {
-                    /*Do Nothing*/
-                }
-            }
-            /*
-                - if Avg > setTEMP by 5 degree 
-                    -Turn On cooling , Turn Off Heating by switching Relay
-            */
-            else if(((u8_t)reading_Avg - setTEMP) >= FIVE_DEGREE )
-            {
-                /*switch relay on to run cool ele.*/
-                hrelay_switchON();  
-
-                /*turn led on*/
-                hled_ledValueON(LED0);
-
-                /*reset end process time*/
-                gu8_endProcess = ENDTIMEPROG ;              
-
-            }
-            /*    
-                - if Avg < setTEMP by 5 degree 
-                    -Turn Off cooling , Turn On Heating by switching Relay
-            */
-            else if ((setTEMP - (u8_t)reading_Avg) >= FIVE_DEGREE)
-            {
-                /*swetch relay off to run heat ele.*/
-                hrelay_switchOFF();
-
-                /*toggle led*/
-                hled_toggleLedValue(LED0);
-
-                /*reset end process time*/
-                gu8_endProcess = ENDTIMEPROG ;              
-            }
-            
-            else
-            {
-                /*Do Nothing*/
-            }
-
-            /*reset counter*/
-            gu8_counter = RESET ;
-
-            /*reset average*/
-            reading_Avg = RESET ;
-        }
-        else 
-        {
-            /*Do Nothing*/
-        }
+        hsev_seg_displayNumber(curTEMP);                
     }
 
     /*Return Function*/
