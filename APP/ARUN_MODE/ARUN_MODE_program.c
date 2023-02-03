@@ -27,15 +27,13 @@
 #define CHECK_TIME           (10)
 #define SEV_SEGMENT_FREQ1    (10)
 #define FIVE_DEGREE          (5)
-#define RESET                (0)
-#define ENDTIMEPROG          (5)
 /***************************************************************************************************/
 /*                                       Functions' definitions                                    */
 /***************************************************************************************************/
 
 static u16_t reading_Avg    = RESET ;
 static u8_t  gu8_counter    = RESET ; 
-static u8_t  gu8_endProcess = ENDTIMEPROG ;
+u8_t  gu8_endProcess = ENDTIMEPROG ;
 
 void arun_mode_checkTemp(void)
 {

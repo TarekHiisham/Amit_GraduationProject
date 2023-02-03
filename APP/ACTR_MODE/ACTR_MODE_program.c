@@ -58,16 +58,32 @@ void actr_mode_switch(void)
         actr_mode_ResetSystem();
     }
 
+    else if(setMODE == SWITCHOFF && runMODE == SWITCHOFF)
+    {
+        
+        if(gu8_endProcess == RESET)
+        {
+            /*Do Nothing*/
+        }
+        else
+        {
+            /*Turn on run mode*/
+            TURNON_MODE(runMODE);
+
+            /*reading latest set temperature*/
+            heeprom_readByte(EEPROM_BLOCK_0 , 10 ,&setTEMP);
+
+            /*turn on the timer*/
+            mtimer_delayMs_asynchronous(TIMER_CHANNEL_0 , PERIOD_CHECK , arun_mode_checkTemp , TIMER_PERIODIC_OPERATION) ;
+        }
+
+    }
+
     else if(setMODE == SWITCHON && runMODE == SWITCHON)
     {
         /* Invalid case */
     }
-
-    else if(setMODE == SWITCHOFF && runMODE == SWITCHOFF)
-    {
-        /* Invalid case */
-    }
-
+    
     else
     {
         /* Do Nothing */
